@@ -189,8 +189,7 @@ public class Ui {
 				Pessoa pessoa = antonio.acharPessoa(nome);
 				String lista;
 				if(tipo.equalsIgnoreCase("Chefes")) {
-					//lista = pessoa.listarSuperiores();
-					lista = "Falta a função";
+					lista = pessoa.listarSuperiores();
 				}
 				else {
 					lista = pessoa.listarSubordinados();

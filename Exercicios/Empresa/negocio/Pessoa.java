@@ -44,14 +44,17 @@ public abstract class Pessoa {
 		this.chefe = chefe;
 	}
 	
-	public void listarSuperiores() {
+	public String listarSuperiores() {
 		
-		Pessoa chefeAtual=this.getChefe();
-		
-		if(chefeAtual!=null) {
-			System.out.println(chefeAtual.getNome());
-			chefeAtual.listarSuperiores();
-		}
+		Pessoa chefeAtual = this.getChefe();
+	    String subordinados = "";
+
+	    if (chefeAtual != null) {
+	        subordinados += chefeAtual.listarSuperiores(); // Concatena a hierarquia dos superiores
+	        subordinados += chefeAtual.getNome() + " "; // Adiciona o nome do chefe atual
+	    }
+
+	    return subordinados;
 		
 	}
 	
