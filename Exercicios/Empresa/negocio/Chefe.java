@@ -20,21 +20,13 @@ public class Chefe extends Pessoa {
 	public String listarSubordinados() {
 		
 		String subordinados = "";
-		String s = "";
 		for (Pessoa subordinado: this.getSubordinados()) {
 			subordinados += "\n" + subordinado.getNome();
-			 s = subordinado.listarSubordinados();
+	        String s = subordinado.listarSubordinados();
+	        subordinados += s;
 		}
 		
-		return subordinados + s;
-		
-		
-//		for (int i = 0; i < subordinados.length; i++) {
-//			Pessoa pessoa = subordinados[i];
-//			System.out.println(pessoa.getNome());
-//			pessoa.listarSubordinados();	
-//		}
-
+		return subordinados;
 	}
 
 	@Override
